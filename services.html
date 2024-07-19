@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Version of EndoveraStudios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .services_container {
+            background-color: #130449;
+            min-height: 75vh;
+            padding: 20px;
+        }
+
+        .header {
+            padding: 5%;
+            text-align: center;
+            color: #e05072;
+            font-size: 25px;
+        }
+
+        .cards_box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 3% 5% 5% 5%;
+        }
+
+        .card_container {
+            width: 250px;
+            height: 300px;
+            perspective: 1000px;
+            margin: 0 auto;
+        }
+
+        .the_card {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease;
+        }
+
+        .the_card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            overflow: hidden;
+            padding: 5%;
+            text-align: center;
+        }
+
+        .front {
+            border: 2px inset #e05072;
+            background-color: hsl(253, 91%, 9%);
+        }
+
+        .front h1 {
+            color: #e05072;
+        }
+
+        .front h7 {
+            color: #b41c3f;
+            display: inline-block;
+        }
+
+        .back {
+            border: 2px inset #130449;
+            background-color: #e05072;
+            color: #333;
+            transform: rotateY(180deg);
+        }
+
+        .back p {
+            color: #130449;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        .view_button {
+            border-radius: 10px;
+            border: 2px solid #e05072;
+            color: #e05072;
+            padding: 9px 18px;
+            background-color: hsl(253, 91%, 9%);
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .view_button:hover {
+            background-color: #bd3253;
+            color: hsl(253, 91%, 9%);
+        }
+
+        #artworks_popUP_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: #130449;
+            border: 2px inset #231d61;
+            padding: 10px;
+            color: #aee4ed;
+            text-align: center;
+        }
+
+        .pictures {
+            border: 2px inset #130449;
+            border-radius: 10px;
+            background-color: hsl(253, 91%, 9%);
+            padding: 0.7%;
+            margin: 10px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .pictures img {
+        max-width: 200px;
+        max-height: 200px;
+        width: 100%;
+        height: auto;
+    }
+
+
+        .pictures:hover {
+            border-color: hsl(253, 58%, 23%);
+            background-color: hsl(253, 58%, 23%);
+            transform: scale(1.07);
+        }
+
+        @media (max-width: 768px) {
+            .cards_box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card_container {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .pictures img {
+                max-width: 100px;
+                max-height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NavBar Section -->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="index.html" id="navbar_logo">
+                <img src="images/EndoveraStudiosLogo1.png" width="60" height="60" alt="Logo">
+            </a>
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item"><a href="index.html" class="navbar_links" id="home-page">Home</a></li>
+                <li class="navbar_item"><a href="about_us.html" class="navbar_links" id="about-us-page">About Us</a></li>
+                <li class="navbar_item"><a href="services.html" class="navbar_links" id="services-page">Services</a></li>
+                <li class="navbar_item"><a href="freelancers.html" class="navbar_links" id="freelancers-page">Freelancers</a></li>
+                <li class="navbar_item"><a href="clients.html" class="navbar_links" id="clients-page">Clients</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="services_container">
+        <div class="pages_header_banner">
+            <h2>SERVICES WE OFFER</h2>
+        </div>
+        <div class="cards_box">
+            <div class="card_container">
+                <div class="the_card">
+                    <div class="front">
+                        <div class="type_of_service">
+                            <h1>DIGITAL ILLUSTRATION</h1>
+                        </div>
+                        <div class="hover_message">
+                            <h7>hover me to learn more!</h7>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Etiam tempor orci eu lobortis elementum. Nibh tellus molestie nunc. Odio tempor orci dapibus ultrices in. Dolor sit amet consectetur adipiscing elit.</p>
+                        <button class="view_button" onclick="toggle1()">See Artists' Digital Illustrations</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card_container">
+                <div class="the_card">
+                    <div class="front">
+                        <div class="type_of_service">
+                            <h1>CHARACTER DESIGN</h1>
+                        </div>
+                        <div class="hover_message">
+                            <h7>hover me to learn more!</h7>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Etiam tempor orci eu lobortis elementum. Nibh tellus molestie nunc. Odio tempor orci dapibus ultrices in. Dolor sit amet consectetur adipiscing elit.</p>
+                        <button class="view_button" onclick="toggle2()">See Artists' Character Designs</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card_container">
+                <div class="the_card">
+                    <div class="front">
+                        <div class="type_of_service">
+                            <h1>ANIMATION</h1>
+                        </div>
+                        <div class="hover_message">
+                            <h7>hover me to learn more!</h7>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Etiam tempor orci eu lobortis elementum. Nibh tellus molestie nunc. Odio tempor orci dapibus ultrices in. Dolor sit amet consectetur adipiscing elit.</p>
+                        <a href="animations_page.html"><button class="view_button">See Artists' Animations</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card_container">
+                <div class="the_card">
+                    <div class="front">
+                        <div class="type_of_service">
+                            <h1>STORYBOARD CREATION</h1>
+                        </div>
+                        <div class="hover_message">
+                            <h7>hover me to learn more!</h7>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Etiam tempor orci eu lobortis elementum. Nibh tellus molestie nunc. Odio tempor orci dapibus ultrices in. Dolor sit amet consectetur adipiscing elit.</p>
+                        <a href="storyboards_page.html"><button class="view_button">See Artists' Storyboard Creations</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card_container">
+                <div class="the_card">
+                    <div class="front">
+                        <div class="type_of_service">
+                            <h1>3D DESIGN</h1>
+                        </div>
+                        <div class="hover_message">
+                            <h7>hover me to learn more!</h7>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <p>Etiam tempor orci eu lobortis elementum. Nibh tellus molestie nunc. Odio tempor orci dapibus ultrices in. Dolor sit amet consectetur adipiscing elit.</p>
+                        <a href="3d_design_page.html"><button class="view_button">See Artists' 3D Designs</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="artworks_popUP_container">
+        <div class="pictures">
+            <img src="images/1.png" alt="Ynna's Portrait"><br>Ynna's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/2.png" alt="Jacob's Portrait"><br>Jacob's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/3.png" alt="Mary's Portrait"><br>Mary's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/4.png" alt="Will's Portrait"><br>Will's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/5.png" alt="Candy's Portrait"><br>Candy's Portrait
+        </div>
+    </div>
+
+    <div id="artworks_popUP_container">
+        <div class="pictures">
+            <img src="images/1.png" alt="Ynna's Portrait"><br>Ynna's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/2.png" alt="Jacob's Portrait"><br>Jacob's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/3.png" alt="Mary's Portrait"><br>Mary's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/4.png" alt="Will's Portrait"><br>Will's Portrait
+        </div>
+        <div class="pictures">
+            <img src="images/5.png" alt="Candy's Portrait"><br>Candy's Portrait
+        </div>
+    </div>
+
+    <div class="footer_container">
+        <img src="images/EndoveraStudios.png" width="200" height="50" alt="EndoveraStudios Logo"><br>
+        Designed by: Alyana Julia N.Coronel<br>
+        juliacoronel555@gmail.com
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
